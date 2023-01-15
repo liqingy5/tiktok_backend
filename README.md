@@ -50,4 +50,4 @@ After installation, click virtual deveice manager to install virtual device.
 
 Drag apk from windows to virtual device can install the app.
 
-To connect backend, change baseUrl to "HTTP://10.0.2.2:8080"
+To connect backend, change baseUrl to `HTTP://10.0.2.2:8080`
