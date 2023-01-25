@@ -3,10 +3,10 @@ package service
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/RaymondCode/simple-demo/controller"
 	"io"
 	"net"
 	"sync"
+	"tiktok_backend/controller"
 )
 
 var chatConnMap = sync.Map{}

@@ -3,10 +3,10 @@ package test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/RaymondCode/simple-demo/controller"
 	"io"
 	"net"
 	"testing"
+	"tiktok_backend/controller"
 	"time"
 )
 
