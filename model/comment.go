@@ -1,4 +1,4 @@
-package models
+package model
 
 type Comment struct {
 	ID          uint   `gorm:"primaryKey;autoIncrement;not null" json:"id"`

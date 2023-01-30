@@ -1,4 +1,4 @@
-package models
+package model
 
 type UserFan struct {
 	ID     uint `gorm:"primaryKey;autoIncrement;not null" json:"id"`

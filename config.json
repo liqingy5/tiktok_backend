@@ -1,0 +1,9 @@
+{
+  "db": {
+    "db_host": "34.105.28.85",
+    "db_port": 3306,
+    "db_user": "icc996007",
+    "db_pass": "996007",
+    "db_name": "tiktok"
+  }
+}

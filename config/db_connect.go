@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 	"log"
 	"os"
-	"tiktok_backend/models"
+	"tiktok_backend/model"
 )
 
 type Configuration struct {
@@ -62,7 +62,7 @@ func InitTables() {
 	if _db == nil {
 		log.Fatal("db is nil")
 	}
-	err := _db.AutoMigrate(&models.User{}, &models.Comment{}, &models.Video{}, &models.UserFan{}, &models.UserLikeVideo{})
+	err := _db.AutoMigrate(&model.User{}, &model.Comment{}, &model.Video{}, &model.UserFan{}, &model.UserLikeVideo{})
 	if err != nil {
 		log.Fatal("create tables failed", err)
 	}
@@ -74,19 +74,19 @@ func InitFakeData() {
 		log.Fatal("db is nil")
 	}
 	// create fake user
-	users := models.User{}.CreateFakeUser()
+	users := model.User{}.CreateFakeUser()
 	_db.Create(&users)
 	// create fake video
-	videos := models.Video{}.CreateFakeVideo()
+	videos := model.Video{}.CreateFakeVideo()
 	_db.Create(&videos)
 	// create fake comment
-	comments := models.Comment{}.CreateFakeComment()
+	comments := model.Comment{}.CreateFakeComment()
 	_db.Create(&comments)
 	// create fake user fan
-	userFans := models.UserFan{}.CreateFakeUserFan()
+	userFans := model.UserFan{}.CreateFakeUserFan()
 	_db.Create(&userFans)
 	// create fake user like video
-	userLikeVideos := models.UserLikeVideo{}.CreateFakeUserLikeVideo()
+	userLikeVideos := model.UserLikeVideo{}.CreateFakeUserLikeVideo()
 	_db.Create(&userLikeVideos)
 }
 
@@ -94,17 +94,17 @@ func CheckFakeData() {
 	if _db == nil {
 		log.Fatal("db is nil")
 	}
-	var users []models.User
+	var users []model.User
 	_db.Find(&users)
 	for _, user := range users {
 		fmt.Println(user)
 	}
-	var videos []models.Video
+	var videos []model.Video
 	_db.Find(&videos)
 	for _, video := range videos {
 		fmt.Println(video.UserId)
 	}
-	var comments []models.Comment
+	var comments []model.Comment
 	_db.Find(&comments)
 	for _, comment := range comments {
 		fmt.Println(comment.UserId)

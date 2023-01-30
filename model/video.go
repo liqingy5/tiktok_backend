@@ -1,4 +1,4 @@
-package models
+package model
 
 type Video struct {
 	ID           uint   `gorm:"primaryKey;autoIncrement;not null" json:"id"`
@@ -10,6 +10,7 @@ type Video struct {
 	CreateTime   int64  `gorm:"autoCreateTime" json:"create_time"`
 	LikeCount    int    `gorm:"type:int;not null;default:0" json:"like_count"`
 	CommentCount int    `gorm:"type:int;not null;default:0" json:"comment_count"`
+	Title        string `gorm:"type:TEXT;not null" json:"title"`
 }
 
 func (Video) CreateFakeVideo() Video {
